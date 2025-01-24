@@ -1,0 +1,5 @@
+/login /
+/*  /:splat  200!  Role=admin
+/site_libs/* /site_libs/:splat 200!
+/   /        200!
+/*  /  401!

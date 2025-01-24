@@ -39,7 +39,20 @@ format:
     include-in-header:
       - text: |
           <meta http-equiv="Cache-Control" content="max-age=1800, must-revalidate"> 
+                  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+          <script>
+          window.netlifyIdentity.on('login', (user) => {
+          window.netlifyIdentity.refresh(true).then(() => {
+            console.log(user);
+          });
+          });
+          window.netlifyIdentity.on('logout', (user) => {
+          window.location.href = '/login';
+          });
+          window.netlifyIdentity.init({ container: '#netlify' });
+          </script>
     lightbox: true
+
     
 # 
 # EMBL colors: https://www.embl.org/guidelines/design/design-guidelines/colours/

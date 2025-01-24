@@ -71,6 +71,18 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <meta http-equiv="Cache-Control" content="max-age=1800, must-revalidate"> 
+        <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+window.netlifyIdentity.on('login', (user) => {
+window.netlifyIdentity.refresh(true).then(() => {
+  console.log(user);
+});
+});
+window.netlifyIdentity.on('logout', (user) => {
+window.location.href = '/login';
+});
+window.netlifyIdentity.init({ container: '#netlify' });
+</script>
 
 
 <meta property="og:title" content="INTeRCePT Meeting Notes – Huber Group @ EMBL">
