@@ -1,5 +1,5 @@
 ---
-title: "INTeRCePT Portal test"
+title: "INTeRCePT Portal"
 listing:
   contents: intercept_posts
   sort: "date desc"
