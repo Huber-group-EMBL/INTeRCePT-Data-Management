@@ -9,12 +9,12 @@ execute:
 engine: knitr
  
 website:
-  title: "Huber Group @ EMBL test"
+  title: "Huber Group @ EMBL"
   open-graph:
      locale:
        en_US
      site-name:
-       "Huber Group @ EMBL test"
+       "Huber Group @ EMBL"
   navbar:
     background: "#18974C"
     foreground: "#D0DEBB"
