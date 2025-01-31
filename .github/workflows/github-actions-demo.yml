@@ -27,18 +27,22 @@ jobs:
         docker exec quarto-container quarto render /project
         ls -l $(pwd)/_site
 
-    # 4. Install AWS CLI
-    - name: Install AWS CLI
-      run: |
-        sudo snap install aws-cli --classic
+#    # 4. Install AWS CLI
+#    - name: Install AWS CLI
+#      run: |
+#        sudo snap install aws-cli --classic
 
-    # 5. Configure AWS credentials securely using GitHub Secrets
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v3
+##     5. Configure AWS credentials securely using GitHub Secrets
+
+#     4. Setup MinIO client
+    - name: Setup MinIO client
+      uses: lovellfelix/minio-deploy-action@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
+        endpoint: https://s3.embl.de/
+        access_key: ${{ secrets.MINIO_ACCESS_KEY }}
+        secret_key: ${{ secrets.MINIO_SECRET_KEY }}
+        bucket: 'intercept-testing'
+        source_dir: '_site'
 
     # 5. Configure AWS credentials securely using GitHub Secrets
 #    - name: Configure AWS credentials
@@ -52,10 +56,10 @@ jobs:
 #        aws configure set default.region $AWS_REGION
 #        aws sts get-caller-identity
 
-    # 6. Upload rendered files to S3
-    - name: Upload to S3
-      run: |
-        aws s3 sync _site s3://${{ secrets.S3_BUCKET_NAME }} --delete
+#    # 6. Upload rendered files to S3
+#    - name: Upload to S3
+#      run: |
+#        aws s3 sync _site s3://${{ secrets.S3_BUCKET_NAME }} --delete
 
     # 7. Clean up Docker container
     - name: Clean up Docker container
