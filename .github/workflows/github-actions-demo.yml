@@ -18,21 +18,12 @@ jobs:
     - name: Set up Docker
       run: |
         docker run -d --name quarto-container -v $(pwd):/project ghcr.io/quarto-dev/quarto:latest tail -f /dev/null
-#        sleep 10 # Wait for the container to be fully up
-#        docker exec -it quarto-container quarto check install || exit 1 # Optional, verify Quarto is installed
 
     # 3. Render the Quarto project
     - name: Render Quarto project
       run: |
         docker exec quarto-container quarto render /project
-        ls -l $(pwd)/_site
-
-#    # 4. Install AWS CLI
-#    - name: Install AWS CLI
-#      run: |
-#        sudo snap install aws-cli --classic
-
-##     5. Configure AWS credentials securely using GitHub Secrets
+        ls -l _site
 
 #     4. Setup MinIO client
     - name: Setup MinIO client
@@ -43,23 +34,6 @@ jobs:
         secret_key: ${{ secrets.MINIO_SECRET_KEY }}
         bucket: 'intercept-testing'
         source_dir: '_site'
-
-    # 5. Configure AWS credentials securely using GitHub Secrets
-#    - name: Configure AWS credentials
-#      env:
-#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#        AWS_REGION: ${{ secrets.AWS_REGION }}
-#      run: |
-#        aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-#        aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-#        aws configure set default.region $AWS_REGION
-#        aws sts get-caller-identity
-
-#    # 6. Upload rendered files to S3
-#    - name: Upload to S3
-#      run: |
-#        aws s3 sync _site s3://${{ secrets.S3_BUCKET_NAME }} --delete
 
     # 7. Clean up Docker container
     - name: Clean up Docker container
