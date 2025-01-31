@@ -22,7 +22,7 @@ jobs:
     # 3. Render the Quarto project
     - name: Render Quarto project
       run: |
-        docker exec quarto-container quarto render /project
+        docker exec quarto-container quarto render /project --cache-refresh
         ls -l _site
 
 #     4. Setup MinIO client
