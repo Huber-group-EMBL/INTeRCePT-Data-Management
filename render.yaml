@@ -1,0 +1,31 @@
+services:
+  - type: pserv
+    name: private-service
+    env: node
+    plan: free
+    repo: https://github.com/Huber-group-EMBL/INTeRCePT-Data-Management
+    startCommand: |
+      # Serve the static site from the _site folder using Python HTTP server
+      python3 -m http.server --directory _site 8000
+  - type: web
+    name: oauth2-proxy
+    env: docker
+    plan: free
+    envVars:
+      - key: UPSTREAM
+        fromService:
+          name: private-service
+          type: pserv
+          property: hostport
+      - key: google
+        sync: false
+      - key: OAUTH2_PROXY_CLIENT_ID
+        sync: false
+      - key: OAUTH2_PROXY_CLIENT_SECRET
+        sync: false
+      - key: OAUTH2_PROXY_COOKIE_SECRET
+        generateValue: true
+      - key: OAUTH2_PROXY_EMAIL_DOMAINS
+        value: '*'
+      - key: OAUTH2_PROXY_HTTP_ADDRESS
+        value: ":4180"
