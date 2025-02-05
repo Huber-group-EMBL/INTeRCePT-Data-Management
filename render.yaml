@@ -11,6 +11,8 @@ services:
     name: oauth2-proxy
     env: docker
     plan: free
+    runtime: docker
+    image: quay.io/oauth2-proxy/oauth2-proxy:v7.2.0
     envVars:
       - key: UPSTREAM
         fromService:
