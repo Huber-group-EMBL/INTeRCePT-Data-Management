@@ -1,7 +1,6 @@
 services:
-  - type: pserv
-    name: private-service
-    env: node
+  - type: web
+    name: static-site
     plan: free
     repo: https://github.com/Huber-group-EMBL/INTeRCePT-Data-Management
     startCommand: |
