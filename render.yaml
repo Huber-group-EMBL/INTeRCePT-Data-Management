@@ -13,8 +13,8 @@ services:
     envVars:
       - key: UPSTREAM
         fromService:
-          name: private-service
-          type: pserv
+          name: static-site
+          type: free
           property: hostport
       - key: OAUTH2_PROXY_PROVIDER
         sync: false
