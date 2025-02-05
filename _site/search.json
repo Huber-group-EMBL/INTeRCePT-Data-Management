@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "intercept_posts/2025-01-22-meetingnotes.html",
+    "href": "intercept_posts/2025-01-22-meetingnotes.html",
+    "title": "INTeRCePT Meeting Notes",
+    "section": "",
+    "text": "Topic: Data Management, Introduction of Miriam Müller\nAttendees: Thorsten Zenz (thorsten.zenz@usz.ch), Marta Pinto (marta.PintoCarbo@usz.ch), Wolfgang Huber (wolfgang.huber@embl.org)\n2025-01-21"
+  },
+  {
+    "objectID": "intercept_posts/2025-01-22-meetingnotes.html#open-problems",
+    "href": "intercept_posts/2025-01-22-meetingnotes.html#open-problems",
+    "title": "INTeRCePT Meeting Notes",
+    "section": "Open problems",
+    "text": "Open problems\n\nThere is a need to centrally catalogue it is unclear what data exists and where it some of the data is stored\ne.g. for flow data - there was a succession of at least three it is unclear whether different experimenters (Tobias Wertheimer, Stefanie Kreutmair, Minqi). To what extent did they  people perform flow cytometry in different ways, and how does it affect the data?"
+  },
+  {
+    "objectID": "intercept_posts/2025-01-22-meetingnotes.html#to-do-list",
+    "href": "intercept_posts/2025-01-22-meetingnotes.html#to-do-list",
+    "title": "INTeRCePT Meeting Notes",
+    "section": "To Do List",
+    "text": "To Do List\n\nGet an overview of the data types and all data sets and where to find what\nTalk to Marta about the data organisation in Zürich\nGet in contact with Natalia to understand what she did\nTalk to Junyan and Caroline to understand their project (“1000 transcriptomes”)\nGet an overview of the tumor biobank (w/Marta) database\nCreate an index page (portal) where all data, metadata, processing steps (scripts) can be found to understand the project\n\n\n\ncreate sections for the five different data types\ngive all relevant information so that it represents a comprehensive guide for people starting on a project\ntry to create something using elements fromlike the old CLL wiki or https://www.huber.embl.de/group/posts.html\n\nMake sure data is prepared for use in MOFA"
+  },
+  {
+    "objectID": "intercept_posts/2025-01-22-meetingnotes.html#pilot-project",
+    "href": "intercept_posts/2025-01-22-meetingnotes.html#pilot-project",
+    "title": "INTeRCePT Meeting Notes",
+    "section": "Pilot project",
+    "text": "Pilot project\n\ncollect flow data (Hosna) and clinical data (Marta) and try to perform statistical tests on the data (e.g. t-test, Cox regression / Kaplan-Meier plots)"
+  },
+  {
+    "objectID": "intercept_posts/2025-01-22-meetingnotes.html#flow-data-compatibility-with-mofa",
+    "href": "intercept_posts/2025-01-22-meetingnotes.html#flow-data-compatibility-with-mofa",
+    "title": "INTeRCePT Meeting Notes",
+    "section": "Flow data & compatibility with MOFA",
+    "text": "Flow data & compatibility with MOFA\n\nFor MOFA: data points = sample specific\nFor Flow Data: data points = cell specific\n\n\n\nfor MOFA cells wouldneed to be grouped and summarized by cell typeclustered (“pseudobulk”)\ncell type fractions are created to be used in MOFA"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "INTeRCePT Portal",
+    "section": "",
+    "text": "INTeRCePT Meeting Notes\n\n\n\n\n\n\nPast events\n\n\n\nHeidelberg, 20th of January 2025\n\n\n\n\n\n2025-01-20\n\n\nWolfgang Huber\n\n\n\n\n\n\nNo matching items"
+  }
+]
