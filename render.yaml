@@ -17,7 +17,7 @@ services:
           name: private-service
           type: pserv
           property: hostport
-      - key: google
+      - key: OAUTH2_PROXY_PROVIDER
         sync: false
       - key: OAUTH2_PROXY_CLIENT_ID
         sync: false
