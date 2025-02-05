@@ -6,6 +6,7 @@ services:
     startCommand: |
       # Serve the static site from the _site folder using Python HTTP server
       python3 -m http.server --directory _site 8000
+    runtime: python
   - type: web
     name: oauth2-proxy
     env: docker
@@ -14,7 +15,7 @@ services:
       - key: UPSTREAM
         fromService:
           name: static-site
-          type: free
+          type: web
           property: hostport
       - key: OAUTH2_PROXY_PROVIDER
         sync: false
