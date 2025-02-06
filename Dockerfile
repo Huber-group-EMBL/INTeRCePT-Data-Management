@@ -1,8 +1,23 @@
+# Use the OAuth2 Proxy image
 FROM quay.io/oauth2-proxy/oauth2-proxy
 
-# Copy configuration files
+# Copy required files into the container
 COPY email_list.txt /site_config/
 COPY _site /app/
 
-# Ensure the environment variable OAUTH2_PROXY_HTTP_ADDRESS is used in the command properly
-ENTRYPOINT ["/bin/sh", "-c", "/bin/oauth2-proxy --provider google --upstream file:///app/#/ --authenticated-emails-file /site_config/email_list.txt --scope=openid profile email --cookie-expire=0h0m30s --skip-provider-button=true --http-address=$(echo $OAUTH2_PROXY_HTTP_ADDRESS)"]
+# Set up the OAuth2 Proxy to use Google authentication
+ENTRYPOINT ["/bin/oauth2-proxy", \
+            "--provider", "google", \
+            "--upstream", "file:///app/#/", \
+            "--authenticated-emails-file", "/site_config/email_list.txt", \
+            "--scope=openid profile email", \
+            "--cookie-expire=0h0m30s", \
+            "--skip-provider-button=true", \
+            "--http-address=0.0.0.0:${PORT}", \
+            "--client-id=${OAUTH2_PROXY_CLIENT_ID}", \
+            "--client-secret=${OAUTH2_PROXY_CLIENT_SECRET}", \
+            "--cookie-secret=${OAUTH2_PROXY_COOKIE_SECRET}", \
+            "--redirect-url=${OAUTH2_PROXY_REDIRECT_URL}", \
+            "--cookie-secure=false", \
+            "--cookie-csrf-per-request=true", \
+            "--cookie-csrf-expire=5m"]
