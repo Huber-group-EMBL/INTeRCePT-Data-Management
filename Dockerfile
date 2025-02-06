@@ -14,9 +14,6 @@ ENTRYPOINT ["/bin/oauth2-proxy", \
             "--cookie-expire=0h0m30s", \
             "--skip-provider-button=true", \
             "--http-address=0.0.0.0:${PORT}", \
-            "--client-id=${OAUTH2_PROXY_CLIENT_ID}", \
-            "--client-secret=${OAUTH2_PROXY_CLIENT_SECRET}", \
-            "--cookie-secret=${OAUTH2_PROXY_COOKIE_SECRET}", \
             "--redirect-url=${OAUTH2_PROXY_REDIRECT_URL}", \
             "--cookie-secure=false", \
             "--cookie-csrf-per-request=true", \
