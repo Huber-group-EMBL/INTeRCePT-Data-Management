@@ -11,4 +11,4 @@ services:
       - key: OAUTH2_PROXY_COOKIE_SECRET
         sync: false
       - key: OAUTH2_PROXY_HTTP_ADDRESS
-        value: ":10000"
+        value: "0.0.0.0:10000"
