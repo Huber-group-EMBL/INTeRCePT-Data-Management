@@ -16,4 +16,5 @@ ENTRYPOINT ["/bin/oauth2-proxy", \
             "--scope=openid profile email", \
             "--cookie-expire=0h0m30s", \
             "--skip-provider-button=true", \
-            "--http-address=0.0.0.0:$PORT"]
+            "--http-address=0.0.0.0", \
+            "--http-port=${PORT}"]
