@@ -10,5 +10,5 @@ services:
         sync: false
       - key: OAUTH2_PROXY_COOKIE_SECRET
         generateValue: true
-      - key: OAUTH2_PROXY_HTTP_ADDRESS
-        value: ":10000"
+      - key: OAUTH2_PROXY_REDIRECT_URL
+        value: "https://your-app-name.onrender.com/oauth2/callback"
