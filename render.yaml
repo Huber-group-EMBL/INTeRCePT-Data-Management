@@ -10,5 +10,3 @@ services:
         sync: false
       - key: OAUTH2_PROXY_COOKIE_SECRET
         sync: false
-      - key: OAUTH2_PROXY_HTTP_ADDRESS
-        generateValue: true
