@@ -9,7 +9,7 @@ services:
       - key: OAUTH2_PROXY_CLIENT_SECRET
         sync: false
       - key: OAUTH2_PROXY_COOKIE_SECRET
-        generateValue: true
+        sync: false
       - key: OAUTH2_PROXY_REDIRECT_URL
         value: "https://intercept-test.onrender.com/oauth2/callback"
       - key: PORT
